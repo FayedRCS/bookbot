@@ -1,17 +1,27 @@
 
-
 BokBot er mitt bok skannings-prosjekt. Ved hjelp av enkel Python kode, leser skriptet igjennom filer og beregner spesifikk data.
 
-Skriptet vil trenge tilgang til mapper med tekstfilene. 
-Jeg bruker gratis e-bøker tilgjengelig på Project Gutenberg; https://www.gutenberg.org/
+Skriptet vil trenge tilgang til mapper med tekstfilene. Dette gjøres ved å oppdatere kodelinjen her:
 
-Prosjektet er fremdeles under arbeid.
+def main():
+    path_of_book = "books/frankenstein.txt" # Access to files require this to be updated. Create folder and text files accordingly (does NOT need to be a .txt extention)
+
+E-bøker er tilgjengelig på Project Gutenberg; https://www.gutenberg.org/
+
+Prosjektet er fremdeles under arbeid
 
 
 ---- 
 
-BookBot is my book searching project. Using fundamental code, this script scans through files at specified paths and scans for data. The project is still under development.
-
+BookBot is my book searching project. Using fundamental code, this script scans through files at specified paths and scans for data. 
 Requirements: 
  
-Cloning this repository will require the script to have access to files located within the path. To do this,
+Cloning this repository will require the script to have access to files located within the path. To do this, update the following line of code:
+
+def main():
+    path_of_book = "books/frankenstein.txt" # Access to files require this to be updated. Create folder and text files accordingly (does NOT need to be a .txt extention)
+
+Use e-books available on Poject Gutenberg for free rescources and content to scan.
+https://www.gutenberg.org/
+
+The project is still under development.
