@@ -1,5 +1,6 @@
 def main():
-    path_of_book = "books/frankenstein.txt"
+    path_of_book = "books/frankenstein.txt" # Access to files require this to be updated. Create folder and text files accordingly (does NOT need to be a .txt extention)
+
     book_text = getting_text(path_of_book)
     words = word_count(book_text)
     characters = char_count(book_text)
@@ -46,7 +47,7 @@ def sorting_characters(dict):
     for i in dict:
         sorted_list_of_dict.append({"char" : i, "amount": dict[i]})
 
-        #we created a function for sorting, and what to sort. then pass it through it later in the .sort() method. Read documentation, if i forget
+        #We created a function for sorting, and what to sort. then pass it through it later in the .sort() method. Read documentation, if i forget
 
     sorted_list_of_dict.sort(reverse=True, key=sort_sys)
     return sorted_list_of_dict
