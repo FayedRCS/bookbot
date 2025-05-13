@@ -1,62 +1,31 @@
+from stats import word_count, char_count, sorting_characters
+
 def main():
-    path_of_book = "books/frankenstein.txt" # Access to files require this to be updated. Create folder and text files accordingly (does NOT need to be a .txt extention)
 
-    book_text = getting_text(path_of_book)
-    words = word_count(book_text)
-    characters = char_count(book_text)
-    sorted_lst = sorting_characters(characters)
+    path_of_book = "books/frankenstein.txt"
 
+    book = getting_text(path_of_book)
+    words = word_count(book)
+    characters = char_count(book)
+    sorted_format = sorting_characters(characters)
 
-    print(f"--- Begin report of {path_of_book} ---")
+    print(f"============ BOOKBOT ============\n"f"Analyzing book found at {path_of_book}...")
 
-    print(f"Scan found {words} words in the text\n")
+    print(f"----------- Word Count ----------\n"f"Found {words} total words")
 
-    for i in sorted_lst:
+    print(f"--------- Character Count -------")
+
+    for i in sorted_format:
         #checking if key value, titled "char" is in the alphabet
         if not i["char"].isalpha():
             continue
 
-        print(f"The '{i['char']}' character was found '{i['amount']}' times")
+        print(f"{i['char']}: {i['amount']}")
 
-    print("--- End Scan ---")
+    print("============= END ===============")
 
-
-#count the amount of words, seperated by whitespace
-def word_count(text):
-    words = text.split()
-    return len(words)
-
-#breaking down further with character count
-def char_count(text):
-
-    char_dict = {}
-    text = text.lower()
     
-    #adds all symbols, but wont matter, we will check if key is in alphabeet later
-    for i in text:
-        if i in char_dict:
-            char_dict[i] += 1
-        else: char_dict[i] = 1
 
-    return char_dict
-
-
-
-def sorting_characters(dict):
-    sorted_list_of_dict = []
-    for i in dict:
-        sorted_list_of_dict.append({"char" : i, "amount": dict[i]})
-
-        #We created a function for sorting, and what to sort. then pass it through it later in the .sort() method. Read documentation, if i forget
-
-    sorted_list_of_dict.sort(reverse=True, key=sort_sys)
-    return sorted_list_of_dict
-
-def sort_sys(subj):
-    return subj["amount"]
-
-
-#function for reading and returning the contents in book file
 def getting_text(path):
 
     with open(path) as f:
